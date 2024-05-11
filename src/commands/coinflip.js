@@ -1,3 +1,5 @@
+const { EmbedBuilder}=require('discord.js')
+
 module.exports = exports = {
   name: 'coinflip',
   usage: '',
@@ -6,8 +8,8 @@ module.exports = exports = {
    * @param {import('discord.js').Message} message
    * @param {import('../index.js').GLOBALS} GLOBALS
    */
-  process: async (message, GLOBALS) => {
-    const embed = new GLOBALS.Embed()
+  process: async (message, client, args) => {
+    const embed = new Embed()
       .setTitle('Flip a Coin')
       .setDescription('A coin will be flipped in 7 seconds, call heads or tails!')
     const coinflipMessage = await message.reply(embed)
